@@ -1,0 +1,83 @@
+<launch>
+   <node pkg="direct_map_localization" type="localization_node" name="localization_node" output="screen">
+      <param name="camera_cx" value="320.3732299804687"/>
+      <param name="camera_cy" value="240.4962158203125"/>
+      <param name="camera_fx" value="386.1335144042969"/>
+      <param name="camera_fy" value="386.1335144042969"/>
+
+      <param name="px_sensor" value="0.05"/>
+      <param name="py_sensor" value="0.1"/>
+      <param name="pz_sensor" value="0.1"/>
+      <param name="qx_sensor" value="-0.5"/>
+      <param name="qy_sensor" value="0.5"/>
+      <param name="qz_sensor" value="-0.5"/>
+      <param name="qw_sensor" value="0.5"/>
+
+      <param name="publish_debug" value="true"/>
+      <param name="external_initial_guess" value="true"/>
+
+      <param name="px_guess" value="-11.5"/>
+      <param name="py_guess" value="8.5"/>
+      <param name="pz_guess" value="0.1"/>
+      <param name="qx_guess" value="0.0"/>
+      <param name="qy_guess" value="0.0"/>
+      <param name="qz_guess" value="0.0"/>
+      <param name="qw_guess" value="1.0"/>
+
+      <param name="odom_data_sync" value="true"/>
+
+      <param name="min_sensor_r" value="1.0"/>
+      <param name="max_sensor_r" value="5.0"/>
+
+      <param name="cloud_rescaling_res" value="0.1"/>
+
+      <param name="max_x" value="0.0"/>
+      <param name="max_y" value="10.0"/>
+      <param name="max_z" value="3.0"/>
+      <param name="min_x" value="-20.0"/>
+      <param name="min_y" value="0.0"/>
+      <param name="min_z" value="0.0"/>
+
+      <param name="border_extension" value="6.0"/>
+
+      <param name="normals_k_search" value="40"/>
+      <param name="cluster_min_dim" value="100"/>
+      <param name="cluster_neighbors" value="20"/>
+      <param name="cluster_smooth_thr" value="5.0"/>
+      <param name="cluster_curv_thr" value="1.0"/>
+      <param name="minimum_clusters_n" value="4"/>
+      <param name="min_nn_point" value="500"/>
+      <param name="use_only_clusters" value="false"/>
+
+      <param name="correctness_factor" value="2.0"/>
+      <param name="relocalization_factor" value="12.0"/>
+      <param name="n_relocalization_samples" value="150"/>
+
+      <param name="sampling_factor_x" value="1.0"/>
+      <param name="sampling_factor_y" value="1.0"/>
+      <param name="sampling_factor_z" value="0.2"/>
+      <param name="sampling_factor_w" value="0.2"/>
+
+      <param name="optimization_bounds_xyz" value="4.0"/>
+      <param name="optimization_bounds_yaw" value="1.0"/>
+
+      <param name="max_roll" value="0.15"/>
+      <param name="max_pitch" value="0.15"/>
+
+      <param name="use_lowpass_filter" value="true"/>
+      <param name="lowpass_cutoff_ff" value="0.01"/>
+
+      <param name="use_cost_bound" value="true"/>
+      <param name="cost_bound" value="10"/>
+      <param name="cost_bias" value="0.0"/>
+      <param name="loss_param" value="1.0"/>
+      <param name="points_factor" value="300.0"/>
+      <param name="nn_points_bound" value="1500"/>
+
+      <param name="map_name" value="/home/nvidia/catkin_ws/src/flightmare/flightrender/pointcloud_data/leonardo.ply"/>
+      <param name="grid_name" value="/home/nvidia/catkin_ws/src/drone_localization/direct_map_localization/data/leonardo.bin"/>
+      <param name="grid_resolution" value="0.05"/>
+
+      <param name="max_nn_threads" value="4"/>
+   </node>
+</launch>
